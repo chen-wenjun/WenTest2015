@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>My Mobile App - View</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="kendo/styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+    <link href="kendo/styles/kendo.default.min.css" rel="stylesheet" />
+    <script src="kendo/js/jquery.min.js"></script>
+    <script src="kendo/js/kendo.all.min.js"></script>
+</head>
+<body>
+    <div id="home" 
+         data-role="view" 
+         data-model="viewModel" 
+         data-title="ViewTitle"
+         data-bind="events: { init: onInit, show: onShow }">
+        ListView! <br />
+
+        <a id="btn1" data-role="button" data-bind="click: onClick">Button1</a>
+        <ul id="listview1" data-role="listview" data-source="data" data-template="template" data-style="inset"></ul>
+
+        <script id="template" type="text/x-kendo-template">
+            <p>#: name # <span>Age: #: age #</span></p>
+        </script>
+
+
+    </div>
+
+    <script>
+
+        var data = [
+            { name: "1jown Doe", age: 30 },
+            { name: "2dfa Doe", age: 35 },
+            { name: "34345 Doe", age: 40 },
+            { name: "4yrtyr Doe", age: 50 }
+        ]
+
+
+        var dataSource = new kendo.data.DataSource({
+            data: [
+                { name: "jown Doe", age: 30 },
+                { name: "dfa Doe", age: 35 },
+                { name: "4345 Doe", age: 40 },
+                { name: "yrtyr Doe", age: 50 }
+            ]
+        })
+
+
+        var viewModel = kendo.observable({
+            onInit: function(e) {
+                //alert('init');
+            },
+            onShow: function(e) {
+                //alert('show');
+            },
+            onClick: function(e) {
+                alert('click');
+            },
+            selectedProduct: 2,
+            products: [
+                { id: 1, name: "product 1" },
+                { id: 2, name: "cloth 2" },
+                { id: 3, name: "shoes 3" },
+                { id: 4, name: "hats 4" },
+            ],
+            onChange: function (e) {
+                let sel = viewModel.get('selectedProduct');
+            },
+            isDisabled: true,
+            isVisible: true,
+            price: 100,
+            colorName: function () {
+                var price = this.get("price");
+                if (price <= 100) {
+                    return "red";
+                } else {
+                    return "green";
+                }
+            }
+        });
+
+        var app = new kendo.mobile.Application(document.body,
+        {
+            transition: 'slide',
+            //platform: 'ios'
+            platform: {
+                device: "ipad", // Mobile device, can be "ipad", "iphone", "ipod", "android" "fire", "blackberry", "meego"
+                name: "ios", // Mobile OS, can be "ios", "android", "blackberry", "meego"
+                ios: true, // Mobile OS name as a flag
+                majorVersion: 5, // Major OS version
+                minorVersion: "0.0", // Minor OS versions
+                flatVersion: "500", // Flat OS version for easier comparison
+                appMode: true, // Whether running in browser or in AppMode/PhoneGap/Titanium.
+                tablet: "ipad"        // If a tablet - tablet name or false for a phone.
+            }
+
+        });
+    </script>
+
+    <script>
+        $(function () {
+
+        });
+    </script>
+</body>
+</html>

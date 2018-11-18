@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script type="text/javascript">
+        function func1(request1, callback1) {
+            setTimeout(function () {
+                if (typeof callback1 === "function") {
+                    alert('func1 done');
+                    callback1(request1 + ' response1');
+                }
+            }, 1000);
+        }
+
+        function func2(request2, callback2) {
+            setTimeout(function () {
+                if (typeof callback2 === "function") {
+                    alert('func2 done');
+                    callback2(request2 + ' response2');
+                }
+            }, 1000);
+        }
+    </script>
+</head>
+<body>
+    <script type="text/javascript">
+        //func1('request1',function (response1) {
+        //    alert('response1=' + response1);
+        //    func2('request2', function (response2) {
+        //        alert('response2=' + response2);
+        //    });
+        //})
+
+
+
+
+        function doWork1(callback1) {
+            setTimeout(function () {
+                if (typeof callback1 === "function") {
+                    alert('doWork1 done');
+                    callback1();
+                }
+            }, 1000);
+        }
+
+        doWork1(function () {
+            setTimeout(function () {
+                alert('doWork2 done');
+                setTimeout(function () {
+                    alert('doWork3 done');
+                }, 1000);
+
+            }, 1000);
+        });
+
+        alert('following doWork1');
+
+    </script>
+</body>
+</html>

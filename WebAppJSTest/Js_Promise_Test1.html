@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <!--<script type="text/javascript" src="js/jquery-1.10.2.js"></script>-->
+</head>
+<body>
+    <div id="myDiv">My Div</div>
+    <label for="searchTxt">Search Text</label>
+    <input type="text" id="searchTxt" name="searchBox" title="this is a good text box" />
+    <input type="button" id="btn1" value="Button1" autofocus />
+    <input type="button" id="btn2" value="Button2" title="this is a good button" />
+    <input type="button" id="btn3" value="Button3" />
+    <br />
+    <br />
+    <div id="content"></div>
+
+    <div id="div1"></div>
+    <div id="div2" title="this is a good div">as asdf safasfd sa</div>
+
+
+    <script type="text/javascript">
+        window.onload = function () {
+            let prom = new Promise(function (resolve, reject) {
+                alert('running promise');
+                resolve('resolved');
+            });
+
+            prom.then(function (resolveData) {
+                alert(resolveData);
+            });
+        };
+
+        
+
+    </script>
+</body>
+</html>

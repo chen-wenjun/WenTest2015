@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+</head>
+<body>
+    <div id="myDiv">My Div</div>
+    <label for="searchTxt">Search Text</label>
+    <input type="text" id="searchTxt" name="searchBox" title="this is a good text box" />
+    <input type="button" id="btn1" value="Button1" autofocus />
+    <input type="button" id="btn2" value="Button2" title="this is a good button" />
+    <input type="button" id="btn3" value="Button3" />
+    <br />
+    <br />
+    <div id="content"></div>
+
+    <div id="div1"></div>
+    <div id="div2" title="this is a good div">as asdf safasfd sa</div>
+
+
+    <script type="text/javascript">
+        window.onload = function () {
+            $('#myDiv').prop('id', 'myDiv1');
+
+            let arr = [1, 2, 3];
+            let int = 1;
+
+            document.getElementById('btn1').onclick = function (e) {
+                arr.push(arr[arr.length - 1] + int);
+                document.getElementById('div1').innerHTML = arr.toString();
+            };
+
+            document.getElementById('btn2').onclick = function () {
+                //arr.pop();
+                //int = int + 1;
+                //document.getElementById('div1').innerHTML = arr.toString();
+
+                try {
+                    dd();
+                }
+                catch (ex) {
+                    console.log(ex);
+                    console.log(ex + 'afas asfdasdfasfdas');
+                }
+            };
+
+            document.getElementById('searchTxt').onkeypress = function (event) {
+                if (event.keyCode == 13) {
+                    $('#content').append('<div>' + this.value + '</div>');
+                    //PushCode(this.value);
+                    this.blur();
+                }
+            }
+
+            $('#btn3').click(function (e) {
+                e.preventDefault();
+                event.preventDefault();
+                $('#content').append('<div>click</div>');
+            }).keydown(function () {
+                $('#content').append('<div>keydown</div>');
+            }).keypress(function () {
+                $('#content').append('<div>keypress</div>');
+            }).keyup(function () {
+                $('#content').append('<div>keyup</div>');
+            });
+        };
+
+    </script>
+</body>
+</html>

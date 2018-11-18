@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>My App</title>
+    <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+    <script src="kendo/js/jquery.min.js"></script>
+    <script src="kendo/js/kendo.all.min.js"></script>
+</head>
+<body>
+    <div id="home" data-role="view" data-layout="default" style="height: 2000px; background-color: lightblue">
+        Hello Mobile World!
+        <ul data-role="listview" data-style="inset" data-type="group">
+            <li>
+                Default button styles
+                <ul>
+                    <li>Contact Add<a data-role="detailbutton" data-style="contactadd"></a></li>
+                    <li>Detail Disclose<a data-role="detailbutton" data-style="detaildisclose"></a></li>
+                    <li>Row Insert<a data-role="detailbutton" data-style="rowinsert"></a></li>
+                    <li>Row Delete<a data-role="detailbutton" data-style="rowdelete"></a></li>
+                </ul>
+            </li>
+            <li>
+                Custom icons
+                <ul>
+                    <li>Battery level<a data-role="detailbutton" data-icon="battery"></a></li>
+                </ul>
+            </li>
+            <li>
+                Link Items & Detail Buttons
+                <ul>
+                    <li><a>Row Insert</a><a data-role="detailbutton" data-style="rowinsert"></a></li>
+                    <li><a>Battery Level</a><a data-role="detailbutton" data-icon="battery"></a></li>
+                </ul>
+            </li>
+            <li>
+                Item Icons
+                <ul>
+                    <li data-icon="home"><a>Home</a></li>
+                    <li data-icon="home">Home</li>
+                </ul>
+            </li>
+
+        </ul>
+
+
+    </div>
+
+    <section data-role="layout" data-id="default">
+        <header data-role="header">
+            <div data-role="navbar">My App</div>
+        </header>
+        <!--View content will render here-->
+        <footer data-role="footer">
+            <div data-role="tabstrip">
+                <a data-icon="home" href="#home">Home</a>
+                <a href="about.html">About</a>
+            </div>
+        </footer>
+    </section>
+
+    <script>
+        var app = new kendo.mobile.Application(document.body,
+        {
+            transition: 'slide',
+            useNativeScrolling: true,
+            //platform: 'ios'
+            platform: {
+                device: "ipad", // Mobile device, can be "ipad", "iphone", "ipod", "android" "fire", "blackberry", "meego"
+                name: "ios", // Mobile OS, can be "ios", "android", "blackberry", "meego"
+                ios: true, // Mobile OS name as a flag
+                majorVersion: 5, // Major OS version
+                minorVersion: "0.0", // Minor OS versions
+                flatVersion: "500", // Flat OS version for easier comparison
+                appMode: true, // Whether running in browser or in AppMode/PhoneGap/Titanium.
+                tablet: "ipad"        // If a tablet - tablet name or false for a phone.
+            }
+
+        });
+    </script>
+
+    <script>
+        $(function () {
+            newDiv = $("<div id='div1'><div id='div2'>text...</div></div>");
+        });
+    </script>
+</body>
+</html>

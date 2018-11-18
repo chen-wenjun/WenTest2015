@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Test</title>
+	<meta charset="utf-8" />
+
+	<script type="text/javascript">
+		function $(id)
+		{
+			return document.getElementById(id);
+		}
+
+		function $$(text)
+		{
+			document.getElementById('div1').innerText = text;
+		}
+
+		function MyObj()
+		{
+			var self = this;
+			this.f1 = function(){ alert(this.constructor);f2();f2.call(this);};
+			function f2() { alert(self.constructor);}
+		}
+
+		var myO = new MyObj();
+		//myO.f1();
+
+		function f1(x, y, z)
+		{
+			alert(arguments.length);
+			var pnames = [];
+			for(p in this)
+			pnames.push(p);
+			alert(pnames);
+			f1.p1++;
+		}
+
+		function h1click()
+		{
+			alert(arguments.length);
+		}
+	</script>
+	
+	<style type="text/css">
+		body {
+			width:400px;
+		}
+		.para1 {
+			position:relative;
+			top:50px;
+			left:100px;
+		}
+		.para2 {
+			position:absolute;
+			top:50px;
+			left:100px;
+		}
+		.float1 {
+			float:left;
+			width:45%;
+			background-color:#cccccc;
+		}
+		.float2 {
+			float:left;
+			width:45%;
+			background-color:#cccccc;
+		}
+	</style>
+</head>
+<body>
+	<h1 id='div1'>
+		h1------------------
+	</h1>
+	<h2 id='h2'>
+		h2-------------------
+	</h2>
+	<h1 id='h1'>
+		h11------------------
+	</h1>
+
+	<p class="float1">When you declare a variable outside of any function, it is called a global variable, because it is available to any other code in the current document. When you declare a variable within a function, it is called a local variable, because it is available only within that function.</p>
+
+	<p class="float2">JavaScript before ECMAScript 2015 does not have block statement scope; rather, a variable declared within a block is local to the function (or global scope) that the block resides within. For example the following code will log 5, because the scope of x is the function (or global context) within which x is declared, not the block, which in this case is an if statement</p>
+</body>
+</html>

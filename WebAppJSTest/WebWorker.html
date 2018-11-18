@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <button id="btn1">Click me!</button>
+    <div id="div1"></div>
+    <script>
+        let clicked = function () {
+            alert(`button ${this.id} clicked`);
+        }
+        document.getElementById('btn1').onclick = clicked;
+
+        let w = new Worker('js/worker.js');
+        w.onmessage = function (event) {
+            document.getElementById('div1').innerHTML = event.data;
+        }
+    </script>
+</body>
+</html>

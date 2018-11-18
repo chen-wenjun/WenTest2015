@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Button</title>
+
+    <link href="kendo/styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="kendo/styles/kendo.default.min.css" rel="stylesheet" />
+    <link href="kendo/styles/kendo.rtl.min.css" rel="stylesheet" />
+
+    <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    
+    <script src="kendo/js/jquery.min.js"></script>
+    <script src="kendo/js/kendo.all.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <button id="btn1" class="btn btn-danger">Button</button>
+        <input id="date1" />
+        <table id="grid">
+            <thead>
+                <tr>
+                    <th>First name</th>
+                    <th>Last name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Emily</td>
+                    <td>Smith</td>
+                </tr>
+                <tr>
+                    <td>Emily1</td>
+                    <td>Smith1</td>
+                </tr>
+                <tr>
+                    <td>Emily2</td>
+                    <td>Smith2</td>
+                </tr>
+                <tr>
+                    <td>Emily3</td>
+                    <td>Smith3</td>
+                </tr>
+            </tbody>
+        </table>
+        <div id="result"></div>
+    </div>
+    <script>
+        $('#btn1').kendoMobileButton({
+            click: function (e) {
+                alert(e);
+            }
+        });
+
+        $('#date1').kendoDatePicker({
+            culture: 'en-US'
+        });
+
+        $('#grid').kendoGrid({
+            sortable: true,
+            editable: true,
+            selectable: true,
+            navigatable: true,
+            filterable: true,
+            pageable: true
+        });
+
+        var model = [
+            { text: "taskdjl;a afj as;lf as;f" },
+            { text: "safj asljas ;fa asfj" },
+            { text: " AJFLA ; ;ASF A;SA;" }
+        ];
+
+        //var model = { text: "sdfsafd asdfas as f" };
+
+        var template = kendo.template("<div>#= data.length # ; #= data[2].text #</div>");
+        var templateResult = template(model);
+        //var templateResult = kendo.render(template, model);
+        $("#result").html(templateResult);
+
+    </script>
+</body>
+</html>
