@@ -56,8 +56,6 @@
     <Content Include="images\smalllogo.scale-100.png" />
     <Content Include="images\splashscreen.scale-100.png" />
     <Content Include="images\storelogo.scale-100.png" />
-    <Content Include="jquery - Copy.html" />
-    <Content Include="mobileApp-switch.html" />
     <Content Include="mobileApp-SelectValueFromAnotherView.html" />
     <Content Include="mobileApp-RelativeContentFlexbox.html" />
     <Content Include="mobileApp-FixedContentScroller.html" />
