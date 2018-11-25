@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Test</title>
+	<meta charset="utf-8" />
+
+	<style type="text/css">
+        #vertical {
+            height: 90px;
+            line-height: 90px;
+            text-align: center;
+            border: 5px solid green;
+        }
+
+        #vertical2 {
+            height: 150px;
+            line-height: 150px;
+            text-align: center;
+            border: 5px solid green;
+        }
+ 
+        span {
+            display: inline-block;
+            vertical-align: middle;
+            line-height: normal;
+        }
+	</style>
+</head>
+<body>
+    <div id="vertical">
+        Hello, Livecoding!
+    </div>
+    <hr />
+
+    <div id="vertical2">
+        <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span>
+    </div>
+    <hr />
+
+    <div style="display: table-cell;vertical-align: middle;border: 5px solid green;height: 100px;">
+        <span>Lorem Ipsum is simply dummy text of the </span>
+        <input type="button" value="button" style="height: 80px;" />
+    </div>
+    <hr />
+
+    <div style="border: 5px solid green;height: 100px;">
+        Lorem Ipsum is simply1 
+        <span style="display: inline-block;vertical-align: middle;">Lorem Ipsum is simply dummy text of the </span>
+        Lorem Ipsum is simply2 
+        <input type="button" value="button" style="height: 80px;" />
+    </div>
+
+
+</body>
+</html>

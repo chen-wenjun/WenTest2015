@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Test</title>
+	<meta charset="utf-8" />
+    <script src="js/jquery-1.10.2.js"></script>
+	<style type="text/css">
+        .bd {
+            border: 1px solid red;
+        }
+        /*#vertical {
+            height: 90px;
+            line-height: 90px;
+            text-align: center;
+            border: 5px solid green;
+        }
+
+        #vertical2 {
+            height: 150px;
+            line-height: 150px;
+            text-align: center;
+            border: 5px solid green;
+        }
+ 
+        span {
+            display: inline-block;
+            vertical-align: middle;
+            line-height: normal;
+        }*/
+	</style>
+</head>
+<body>
+    <div style="display: table-cell;vertical-align: middle;border: 1px solid green;height: 100px;">
+        <span class="bd">Lorem Ipsum is simply dummy text of the </span>
+        text outside span 
+        <img style="height: 40px; width: 40px;" />
+        <span style="height: 60px;">Lorem Ipsum is simply dummy text of the </span>
+        <input type="button" value="button" style="height: 40px;vertical-align: baseline;" />
+        asdfasdf
+        <span style="display: inline-block;height: 50px;width: 100px;vertical-align: middle;">
+            eie kdeik saf  
+        </span>
+    </div>
+    <hr />
+
+    <div style="border: 1px solid green;height: 100px;">
+        Lorem Ipsum is simply1 
+        <span style="display: inline-block;vertical-align: middle;">Lorem Ipsum is simply dummy text of the </span>
+        Lorem Ipsum is simply2 
+        <input type="button" value="button" style="height: 100%;" />
+    </div>
+
+    <script type="text/javascript">
+        $(function () {
+            $('*', 'body').addClass('bd');
+        });
+    </script>
+</body>
+</html>
