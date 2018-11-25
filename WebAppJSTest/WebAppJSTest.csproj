@@ -98,6 +98,8 @@
     <Content Include="css_Test1.html" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
+    <Content Include="css_VerticleAlign1.html" />
+    <Content Include="css_VerticleAlign2.html" />
     <Content Include="JQuery_Bootstrap_Test1.html" />
     <Content Include="Js_Promise_Test1.html" />
     <Content Include="JQuery_Test1.html" />

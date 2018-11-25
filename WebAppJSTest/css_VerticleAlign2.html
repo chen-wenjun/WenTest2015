@@ -1,55 +1,54 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>CSS Test</title>
+    <title>CSS Test2</title>
 	<meta charset="utf-8" />
 
 	<style type="text/css">
-        #vertical {
-            height: 90px;
-            line-height: 90px;
-            text-align: center;
-            border: 5px solid green;
-        }
-
-        #vertical2 {
-            height: 150px;
-            line-height: 150px;
-            text-align: center;
-            border: 5px solid green;
-        }
- 
-        span {
-            display: inline-block;
-            vertical-align: middle;
-            line-height: normal;
-        }
+      .container {
+        min-height: 8em;
+        position: relative; /* so center-area can
+                               be positioned absolute */
+      }
+      .center-area {
+        /* let it fill the whole container */
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+      .center-area::before {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%;
+      }
+      .centered {
+        display: inline-block;
+        vertical-align: middle;
+      }
 	</style>
 </head>
 <body>
-    <div id="vertical">
-        Hello, Livecoding!
-    </div>
-    <hr />
-
-    <div id="vertical2">
-        <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span>
-    </div>
-    <hr />
-
-    <div style="display: table-cell;vertical-align: middle;border: 5px solid green;height: 100px;">
-        <span>Lorem Ipsum is simply dummy text of the </span>
-        <input type="button" value="button" style="height: 80px;" />
-    </div>
-    <hr />
-
-    <div style="border: 5px solid green;height: 100px;">
-        Lorem Ipsum is simply1 
-        <span style="display: inline-block;vertical-align: middle;">Lorem Ipsum is simply dummy text of the </span>
-        Lorem Ipsum is simply2 
-        <input type="button" value="button" style="height: 80px;" />
+    <div class="container" style="background:lightgrey;">
+        <div class="center-area" style="background:lightblue;"><!--
+         --><div class="centered" style="background:lightgreen;">
+                Yay, I'm centered in the blue area!
+            </div>
+        </div>
+        <div class="content" style="background:pink;">
+            <!-- Some content defining the
+                 height of the container -->
+            asdf as
+            asdf
+            asd
+            fas
+            fasdfasfasfasfd
+        </div>
     </div>
 
+    <div
 
 </body>
 </html>
